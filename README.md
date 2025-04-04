@@ -414,11 +414,11 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 ### `telas/admin/configuracoes.php`
 ![configuracoes.php](telas/admin/configuracoes.png)
 
-### `/admin/estabelecimentos.php`
-![estabelecimentos.php](admin/estabelecimentos.png)
+### `telas/admin/estabelecimentos.php`
+![estabelecimentos.php](telas/admin/estabelecimentos.png)
 
-### `/admin/estab_detalhe.php`
-![estab_detalhe.php](admin/estab_detalhe.png)
+### `telas/admin/estab_detalhe.php`
+![estab_detalhe.php](telas/admin/estab_detalhe.png)
 
 ### `telas/admin/mapa.php`
 ![mapa.php](telas/admin/mapa.png)
