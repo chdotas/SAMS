@@ -377,7 +377,7 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 
 ## Painel do Parceiro
 
-### `/parceiro/dashboard.php`
+### `telas/parceiro/dashboard.php`
 ![dashboard.php](parceiro/dashboard.png)
 
 ### `/parceiro/minhas_mesas.php`
