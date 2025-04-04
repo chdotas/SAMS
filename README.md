@@ -372,6 +372,68 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 
 ---
 
+
+# Telas do Sistema
+
+## Painel do Parceiro
+
+### `/parceiro/dashboard.php`
+![dashboard.php](parceiro/dashboard.png)
+
+### `/parceiro/minhas_mesas.php`
+![minhas_mesas.php](parceiro/minhas_mesas.png)
+
+### `/parceiro/relatorios.php`
+![relatorios.php](parceiro/relatorios.png)
+
+### `/parceiro/acertos.php`
+![acertos.php](parceiro/acertos.png)
+
+### `/parceiro/suporte.php`
+![suporte.php](parceiro/suporte.png)
+
+### `/parceiro/perfil.php`
+![perfil.php](parceiro/perfil.png)
+
+---
+
+## Painel do Administrador
+
+### `/admin/dashboard.php`
+![dashboard.php](admin/dashboard.png)
+
+### `/admin/mesas.php`
+![mesas.php](admin/mesas.png)
+
+### `/admin/mesa_detalhe.php`
+![mesa_detalhe.php](admin/mesa_detalhe.png)
+
+### `/admin/mesa_nova.php`
+![mesa_nova.php](admin/mesa_nova.png)
+
+### `/admin/configuracoes.php`
+![configuracoes.php](admin/configuracoes.png)
+
+### `/admin/estabelecimentos.php`
+![estabelecimentos.php](admin/estabelecimentos.png)
+
+### `/admin/estab_detalhe.php`
+![estab_detalhe.php](admin/estab_detalhe.png)
+
+### `/admin/mapa.php`
+![mapa.php](admin/mapa.png)
+
+### `/admin/relatorios.php`
+![relatorios.php](admin/relatorios.png)
+
+### `/admin/acertos.php`
+![acertos.php](admin/acertos.png)
+
+### `/admin/suporte.php`
+![suporte.php](admin/suporte.png)
+
+
+
 ---
 
 ## 📄 Condições Contratuais e Execução
