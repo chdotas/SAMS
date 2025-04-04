@@ -1,8 +1,17 @@
-# SAMS 1.0 Beta
+# SAMS 1.0 Beta  
 ### Sistema de Automação para Mesas de Sinuca
 
 ## Visão Geral
-Este projeto tem como objetivo automatizar e gerenciar mesas de sinuca utilizando um dispositivo baseado em ESP32 com funcionalidades de crédito via moedeiro, noteiro e pagamento via PIX. O sistema conta com comunicação via Wi-Fi e backup 3G, opera com bateria recarregável e possui painel administrativo completo para controle da empresa e dos estabelecimentos parceiros.
+
+O **SAMS 1.0 (Sistema de Automação para Mesas de Sinuca)** é uma solução completa para controle, monitoramento e gestão de mesas de sinuca em estabelecimentos comerciais. O sistema utiliza um dispositivo embarcado baseado em **ESP32**, que permite o gerenciamento automatizado da liberação da mesa por meio de créditos inseridos via **moedeiro, noteiro ou pagamento via PIX**.
+
+Com conectividade via **Wi-Fi** e suporte a **módulo 3G** como alternativa, o dispositivo mantém comunicação constante com um **servidor central** para registro de dados, envio de comandos remotos e sincronização de informações. Alimentado por **bateria recarregável**, o SAMS é projetado com foco em **baixo consumo de energia** para garantir longa autonomia.
+
+O sistema é complementado por um **painel administrativo web**, dividido em dois níveis de acesso:  
+- **Administração da empresa** (gestão de todas as mesas e estabelecimentos)  
+- **Gerenciamento de estabelecimentos parceiros** (controle individual de cada local)  
+
+Essa estrutura garante controle total, relatórios financeiros completos, geolocalização das mesas, integração com pagamentos e a automação inteligente da operação das mesas de sinuca.
 
 ---
 
