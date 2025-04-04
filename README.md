@@ -216,75 +216,215 @@ A adoção da **placa ESP32 com relés integrados** torna o projeto mais compact
 
 Esse conjunto oferece um excelente equilíbrio entre desempenho, simplicidade e economia — ideal para aplicações comerciais que exigem estabilidade e manutenção mínima.
 
+---
 
+# 🖥️ Painel Administrativo Web (PHP + MySQL)
 
+O sistema web é dividido em **dois níveis de acesso**, com permissões específicas para cada tipo de usuário:
 
-### Pagamento por PIX
-- Geração de QR Code dinâmico via API
-- Monitoramento do pagamento e liberação de crédito
-- Registro e relatório de transações PIX
+- **Administrador** (empresa responsável pelas mesas)
+- **Parceiro** (estabelecimento onde a mesa está instalada)
 
-### Comunicação
-- Envio de dados de uso, crédito, bateria, localização
-- Recebimento de comandos remotos (bloqueio, reset, etc)
+## 🔐 Tela de Login
+
+Todos os usuários devem acessar o sistema por meio de autenticação. A tela de login permite que o usuário selecione o tipo de perfil (Admin ou Parceiro) e seja redirecionado ao painel correspondente após validação.
+
+### Campos:
+
+- **Usuário (e-mail):** campo de entrada padrão
+- **Senha:** campo seguro
+- **Tipo de acesso:** seleção entre `Administrador` ou `Parceiro`
+
+### Ações:
+
+- Ao efetuar o login, o sistema redireciona:
+  - Admin → `/admin/dashboard.php`
+  - Parceiro → `/parceiro/dashboard.php`
 
 ---
 
+## 👤 Administração (Empresa)
+
+O administrador tem acesso completo ao sistema e é responsável por cadastrar mesas, gerenciar parceiros, acompanhar os resultados e realizar acertos financeiros.
 
 
+### Funcionalidades
 
+- **Dashboard Geral**
+  - Visão resumida do sistema
+  - Total arrecadado por período
+  - Número de partidas
+  - Mesas online/offline e bloqueadas
+  - Alertas de bateria baixa ou falha de comunicação
 
-## Painel Administrativo Web (PHP + MySQL)
+- **Gestão de Mesas**
+  - Cadastro de novas mesas com configurações iniciais
+  - Edição e exclusão de mesas
+  - Associação de cada mesa a um parceiro
+  - Acompanhamento individual (detalhes, créditos, contador)
+  - Logs de uso (data/hora, valor inserido, tipo de pagamento)
 
-### Administração (Empresa)
-- Gestão de todas as mesas
-- Cadastro e gerenciamento de estabelecimentos parceiros
-- Mapa com localização das mesas
-- Controle e histórico de acertos/fechamentos financeiros
-- Relatórios por período, forma de pagamento, uso e status
+- **Cadastro e Gerenciamento de Estabelecimentos**
+  - Nome, responsável, endereço e contato
+  - Comissão por uso (% ou valor fixo)
+  - Localização via mapa (Google Maps)
 
-### Estabelecimento (Parceiro)
-- Visualização de suas mesas
-- Relatórios e movimentações
-- Solicitação de suporte
-- Acompanhamento de repasses
+- **Geolocalização das Mesas**
+  - Mapa interativo com todas as mesas
+  - Filtros por status (online, offline, bloqueada)
+  - Visualização rápida do estado geral da rede
+
+- **Relatórios e Estatísticas**
+  - Filtros por data, parceiro, forma de pagamento, mesa
+  - Arrecadação detalhada com exportação em PDF ou Excel
+  - Gráficos por dia, semana e mês
+
+- **Gestão de Acertos**
+  - Cálculo automático de comissão do parceiro
+  - Histórico de pagamentos
+  - Marcação de status (pago/pendente)
+  - Upload de comprovante (PDF)
+
+- **Configurações**
+  - Formulários individuais de configuração por mesa
+  - Parâmetros: valor por crédito, tempo de uso, volume, sensibilidade, modo economia
+  - Definição de padrões para novas mesas
+  - Controle de usuários internos (funcionários)
+
+- **Central de Suporte**
+  - Visualização de todos os chamados abertos por parceiros
+  - Resposta via formulário interno
+  - Marcação de status (em análise, resolvido)
+  - Histórico completo de atendimento
+
+### Telas utilizadas
+
+- `/admin/dashboard.php`
+- `/admin/mesas.php`
+- `/admin/mesa_detalhe.php`
+- `/admin/mesa_nova.php`
+- `/admin/configuracoes.php`
+- `/admin/estabelecimentos.php`
+- `/admin/estab_detalhe.php`
+- `/admin/mapa.php`
+- `/admin/relatorios.php`
+- `/admin/acertos.php`
+- `/admin/suporte.php`
 
 ---
 
-## Banco de Dados (Estrutura Principal)
-- `usuarios`: admins e parceiros
-- `estabelecimentos`: cadastro dos locais e contatos
-- `mesas`: configuração, status, localização
-- `transacoes`: registros de fichas, cédulas, PIX
-- `pagamentos_pix`: controle e status dos pagamentos
-- `comandos`: controle de ações remotas
-- `eventos`: logs de atividade e falhas
-- `acertos`: histórico de fechamentos e repasses
+## 🧾 Estabelecimento (Parceiro)
+
+O parceiro possui acesso restrito para acompanhar o desempenho e o uso das mesas instaladas no seu local.
+
+### Funcionalidades
+
+- **Dashboard do Estabelecimento**
+  - Total arrecadado no mês
+  - Quantidade de ativações (partidas)
+  - Créditos por tipo de pagamento
+  - Status das mesas (bateria, online, bloqueada)
+
+- **Minhas Mesas**
+  - Lista de mesas ativas
+  - Créditos atuais e contador
+  - Status em tempo real
+  - Últimas interações
+
+- **Relatórios**
+  - Filtros por período e forma de pagamento
+  - Resumo com gráficos simples
+  - Visão clara de desempenho
+
+- **Repasses e Acertos**
+  - Histórico de valores recebidos
+  - Situação do pagamento
+  - Comprovantes (PDF)
+
+- **Solicitação de Suporte**
+  - Formulário para envio de chamado técnico
+  - Histórico de chamados abertos e resolvidos
+
+### Telas utilizadas
+
+- `/parceiro/dashboard.php`
+- `/parceiro/minhas_mesas.php`
+- `/parceiro/relatorios.php`
+- `/parceiro/acertos.php`
+- `/parceiro/suporte.php`
+- `/parceiro/perfil.php`
 
 ---
 
-## Tecnologias Utilizadas
-- ESP32 (C++ / Arduino Framework)
-- Display OLED ou TFT
-- PHP (API RESTful e Painel Web)
-- MySQL / MariaDB
-- HTML5, CSS3, Bootstrap / AdminLTE
-- Módulo 3G (SIM800L / SIM7600)
+## 💡 Recursos Técnicos
+
+- **Linguagem Backend:** PHP 8+
+- **Banco de Dados:** MySQL / MariaDB
+- **Frontend:** HTML5, CSS3, JavaScript (Bootstrap)
+- **API REST:** Comunicação com dispositivos ESP32
+- **Autenticação:** Login com permissões (admin/parceiro)
+- **Geolocalização:** Google Maps API
+- **Segurança:** Login seguro com controle de sessão (JWT opcional)
 
 ---
 
-## Etapas do Projeto
+Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar os scripts PHP com autenticação e rotas básicas.
 
-1. Definição da arquitetura geral
-2. Escolha e testes dos componentes eletrônicos
-3. Desenvolvimento do firmware ESP32
-4. Criação da API e banco de dados
-5. Integração com sistema de pagamento PIX
-6. Desenvolvimento do painel web (admin e parceiro)
-7. Implementação da geolocalização e mapas
-8. Integração completa e testes reais
-9. Validação dos relatórios e acertos financeiros
-10. Documentação final e implantação
+---
+
+## ✅ Etapas do Projeto (Checklist)
+
+Abaixo estão as fases previstas para o desenvolvimento completo do sistema SAMS 1.0 – com checklist para controle de progresso:
+
+- [ ] **1. Definição da Arquitetura Geral**  
+  - Planejamento do fluxo do sistema  
+  - Separação dos módulos (hardware, software, API, painel)  
+  - Definição de responsabilidades entre ESP32, servidor e banco de dados  
+
+- [ ] **2. Escolha e Testes dos Componentes Eletrônicos**  
+  - Seleção dos melhores componentes  
+  - Testes de comunicação entre ESP32, periféricos e sensores  
+  - Avaliação de consumo com bateria  
+
+- [ ] **3. Desenvolvimento do Firmware ESP32**  
+  - Leitura de entradas (fichas, cédulas, sensores)  
+  - Controle de relés e display  
+  - Comunicação com servidor via Wi-Fi / 4G  
+  - Economia de energia (deep sleep)  
+
+- [ ] **4. Criação da API e Banco de Dados**  
+  - Endpoints RESTful em PHP  
+  - MySQL com tabelas para mesas, créditos, transações  
+  - Segurança básica (token, autenticação)  
+
+- [ ] **5. Integração com Sistema de Pagamento PIX**  
+  - Geração de QR Code (Gerencianet)  
+  - Verificação automática de pagamento  
+  - Liberação de crédito após confirmação  
+
+- [ ] **6. Desenvolvimento do Painel Web (Admin e Parceiro)**  
+  - Telas separadas por tipo de usuário  
+  - Relatórios, suporte, controle de mesas  
+  - Login seguro com permissões  
+
+- [ ] **7. Implementação da Geolocalização e Mapas**  
+  - Google Maps com marcadores por status  
+  - Filtro por cidade e região  
+
+- [ ] **8. Integração Completa e Testes Reais**  
+  - Testes físicos com ESP32 + servidor  
+  - Simulações de pagamento, bloqueio e liberação  
+  - Operação offline com fallback  
+
+- [ ] **9. Validação dos Relatórios e Acertos Financeiros**  
+  - Teste de exportação PDF / Excel  
+  - Cálculo de comissão e repasses  
+  - Upload de comprovantes  
+
+- [ ] **10. Documentação Final e Implantação**  
+  - Manual técnico e instruções de instalação  
+  - Entrega para estabelecimentos parceiros  
+  - Monitoramento pós-implantação  
 
 ---
 
@@ -333,3 +473,4 @@ O sistema SAMS 1.0 permite que o cliente pague para liberar a mesa de sinuca via
 - O sistema usa **cobranças dinâmicas com vencimento automático**.
 
 ---
+

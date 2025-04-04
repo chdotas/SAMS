@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulador SAMS - Tela do Dispositivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: #111;
+      font-family: 'Roboto Mono', monospace;
+      color: #0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 20px;
+    }
+    .tela {
+      width: 320px;
+      height: 240px;
+      background: #000;
+      border: 5px solid #333;
+      border-radius: 10px;
+      padding: 10px 15px;
+      box-shadow: 0 0 20px #00ff88;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .linha {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .qr-code {
+      background: #fff;
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+    }
+    .small {
+      font-size: 12px;
+      color: #ccc;
+    }
+    .botoes {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .botoes button {
+      background-color: #222;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .botoes button:hover {
+      background-color: #0f0;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tela" id="tela"></div>
+
+  <div class="botoes">
+    <button onclick="mostrarEstado(0)">🕐 Aguardando Crédito</button>
+    <button onclick="mostrarEstado(1)">💸 PIX Gerado</button>
+    <button onclick="mostrarEstado(2)">✅ Pagamento Confirmado</button>
+    <button onclick="mostrarEstado(3)">🎱 Mesa Liberada</button>
+    <button onclick="mostrarEstado(4)">🔒 Mesa Bloqueada</button>
+    <button onclick="mostrarEstado(5)">⚙️ Configuração</button>
+  </div>
+
+  <script>
+    const tela = document.getElementById("tela");
+
+    const estados = [
+      `
+        <div class="linha">🟢 SAMS 1.0</div>
+        <div class="linha">Insira ficha, cédula</div>
+        <div class="linha">ou pague via PIX</div>
+        <div class="linha"> </div>
+        <div class="linha">Créditos: 0</div>
+        <div class="linha small">Aguardando pagamento...</div>
+      `,
+      `
+        <div class="linha">🔷 PAGAMENTO PIX</div>
+        <div class="linha">Leia o QR Code abaixo</div>
+        <div class="linha">para pagar R$ 5,00</div>
+        <div class="qr-code"></div>
+        <div class="linha small">Aguardando confirmação...</div>
+      `,
+      `
+        <div class="linha">✅ PAGAMENTO OK</div>
+        <div class="linha">Créditos adicionados: 1</div>
+        <div class="linha">Créditos atuais: 1</div>
+        <div class="linha small">Aguardando uso...</div>
+      `,
+      `
+        <div class="linha">🎱 MESA LIBERADA</div>
+        <div class="linha">Tempo: 15 min</div>
+        <div class="linha">Créditos restantes: 0</div>
+        <div class="linha small">Bom jogo!</div>
+      `,
+      `
+        <div class="linha">🔒 MESA BLOQUEADA</div>
+        <div class="linha">Esta mesa está inativa</div>
+        <div class="linha">por solicitação da empresa</div>
+        <div class="linha"> </div>
+        <div class="linha small">Contate o suporte técnico.</div>
+      `,
+      `
+        <div class="linha">⚙️ CONFIGURAÇÕES</div>
+        <div class="linha">Valor por Crédito: R$ 5,00</div>
+        <div class="linha">Tempo por Partida: 15 min</div>
+        <div class="linha">Volume: Médio</div>
+        <div class="linha">Sensibilidade: 7</div>
+        <div class="linha small">Modo Eco: Deep Sleep 5 min</div>
+      `
+    ];
+
+    function mostrarEstado(index) {
+      tela.innerHTML = estados[index];
+    }
+
+    mostrarEstado(0);
+  </script>
+
+</body>
+</html>
