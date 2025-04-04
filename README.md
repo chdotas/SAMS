@@ -435,22 +435,19 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 
 ## Painel do Dispositivo
 
-### `telas/dispositivos/Bloqueada.php`
+### `telas/dispositivo/Bloqueada.php`
 ![Bloqueada.php](telas/dispositivos/Bloqueada.png)
 
-### `telas/dispositivos/Configuração.php`
-![Configuração.php](telas/dispositivos/Configuração.png)
+### `telas/dispositivo/Configuracao.php`
+![Configuracao.php](telas/dispositivo/Configuracao.png)
 
-### `telas/dispositivos/Liberada.php`
-![Liberada.php](telas/dispositivos/Liberada.png)
+### `telas/dispositivo/Liberada.php`
+![Liberada.php](telas/dispositivo/Liberada.png)
 
-### `telas/dispositivos/Liberada.php`
-![Liberada.php](telas/dispositivos/Liberada.png)
+### `telas/dispositivo/Confirmado.php`
+![Confirmado.php](telas/dispositivo/Confirmado.png)
 
-### `telas/dispositivos/Confirmado.php`
-![PIX.php](telas/dispositivos/PIX.png)
-
-### `telas/dispositivos/Confirmado.php`
+### `telas/dispositivo/Confirmado.php`
 ![Confirmado.php](telas/dispositivos/Confirmado.png)
 
 
