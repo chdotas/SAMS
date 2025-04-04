@@ -406,13 +406,13 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 ![mesas.php](telas/admin/mesas.png)
 
 ### `telas/admin/mesa_detalhe.php`
-![mesa_detalhe.php](    in/mesa_detalhe.png)
+![mesa_detalhe.php](telas/admin/mesa_detalhe.png)
 
-### `/admin/mesa_nova.php`
-![mesa_nova.php](admin/mesa_nova.png)
+### `telas/admin/mesa_nova.php`
+![mesa_nova.php](telas/admin/mesa_nova.png)
 
-### `/admin/configuracoes.php`
-![configuracoes.php](admin/configuracoes.png)
+### `telas/admin/configuracoes.php`
+![configuracoes.php](telas/admin/configuracoes.png)
 
 ### `/admin/estabelecimentos.php`
 ![estabelecimentos.php](admin/estabelecimentos.png)
