@@ -399,14 +399,14 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 
 ## Painel do Administrador
 
-### `/admin/dashboard.php`
-![dashboard.php](admin/dashboard.png)
+### `telas/admin/dashboard.php`
+![dashboard.php](telas/admin/dashboard.png)
 
-### `/admin/mesas.php`
-![mesas.php](admin/mesas.png)
+### `telas/admin/mesas.php`
+![mesas.php](telas/admin/mesas.png)
 
-### `/admin/mesa_detalhe.php`
-![mesa_detalhe.php](admin/mesa_detalhe.png)
+### `telas/admin/mesa_detalhe.php`
+![mesa_detalhe.php](    in/mesa_detalhe.png)
 
 ### `/admin/mesa_nova.php`
 ![mesa_nova.php](admin/mesa_nova.png)
@@ -420,17 +420,42 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 ### `/admin/estab_detalhe.php`
 ![estab_detalhe.php](admin/estab_detalhe.png)
 
-### `/admin/mapa.php`
-![mapa.php](admin/mapa.png)
+### `telas/admin/mapa.php`
+![mapa.php](telas/admin/mapa.png)
 
-### `/admin/relatorios.php`
-![relatorios.php](admin/relatorios.png)
+### `telas/admin/relatorios.php`
+![relatorios.php](telas/admin/relatorios.png)
 
-### `/admin/acertos.php`
-![acertos.php](admin/acertos.png)
+### `telas/admin/acertos.php`
+![acertos.php](telas/admin/acertos.png)
 
-### `/admin/suporte.php`
-![suporte.php](admin/suporte.png)
+### `telas/admin/suporte.php`
+![suporte.php](telas/admin/suporte.png)
+
+
+## Painel do Dispositivo
+
+### `telas/dispositivos/Bloqueada.php`
+![bloqueios.php](telas/dispositivos/Bloqueada.png)
+
+### `telas/dispositivos/Configuração.php`
+![configuracoes.php](telas/dispositivos/Configuração.png)
+
+### `telas/dispositivos/Liberada.php`
+![credenciais.php](telas/dispositivos/Liberada.png)
+
+### `telas/dispositivos/Liberada.php`
+![credenciais.php](telas/dispositivos/Liberada.png)
+
+### `telas/dispositivos/Confirmado.php`
+![credenciais.php](telas/dispositivos/PIX.png)
+
+### `telas/dispositivos/Confirmado.php`
+![credenciais.php](telas/dispositivos/Confirmado.png)
+
+
+
+
 
 
 
