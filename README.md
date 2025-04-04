@@ -372,6 +372,47 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 
 ---
 
+---
+
+## 📄 Condições Contratuais e Execução
+
+Este documento representa a proposta técnica e funcional do sistema **SAMS 1.0**, com todas as etapas, funcionalidades e tecnologias previstas.  
+
+Atualmente, o projeto se encontra na **fase de ajustes e definição final** com o contratante. Durante esta etapa, o contratante pode propor **modificações e aprimoramentos** sobre o escopo inicial aqui descrito.
+
+### Início da Execução
+
+Após a **validação final do escopo e dos ajustes solicitados pelo contratante**, será firmado um **contrato de prestação de serviços** para o desenvolvimento completo da solução.
+
+O início da execução ocorrerá imediatamente após:
+
+- Acordo final sobre o escopo e prazos
+- Assinatura do contrato de prestação de serviço
+- Pagamento do sinal de calção
+
+### Condições Comerciais
+
+- 💰 **Valor total do projeto:** R$ 5.000,00 (cinco mil reais)
+- 🔐 **Sinal de calção obrigatório:** 30% (R$ 1.500,00), pago no ato da assinatura do contrato
+- ⏳ **Prazo para conclusão e entrega:** até **3 meses corridos** após o início formal
+
+### Direitos do Contratante
+
+O contratante terá total e irrevogável **direito sobre o código-fonte** e demais arquivos do projeto, incluindo:
+
+- Código do firmware (ESP32)
+- Código do painel administrativo (web)
+- Banco de dados e estrutura das APIs
+- Interface e arquivos gráficos desenvolvidos
+
+O contratante poderá utilizar, modificar, redistribuir ou evoluir o sistema livremente após a entrega, **sem qualquer limitação técnica ou jurídica**.
+
+---
+
+Este projeto será executado com base nas etapas descritas nesta proposta, seguindo um cronograma claro, com transparência total e compromisso com a qualidade e entrega dentro do prazo acordado.
+
+
+
 ## ✅ Etapas do Projeto (Checklist)
 
 Abaixo estão as fases previstas para o desenvolvimento completo do sistema SAMS 1.0 – com checklist para controle de progresso:
@@ -428,49 +469,84 @@ Abaixo estão as fases previstas para o desenvolvimento completo do sistema SAMS
 
 ---
 
-## Licença
-Este projeto está licenciado sob os termos da MIT License.
+## 🗓️ Cronograma de Execução – 3 Meses
 
 ---
+
+### 📅 Mês 1: Planejamento e Base Técnica
+
+- [ ] **Semana 1**
+  - [ ] Definição da arquitetura geral do projeto
+  - [ ] Estruturação do repositório (painel, firmware, docs)
+  - [ ] Escolha dos componentes (ESP32, relé, display, sensores)
+
+- [ ] **Semana 2**
+  - [ ] Testes com hardware (alimentação, relés, entradas)
+  - [ ] Montagem da primeira versão do protótipo físico
+  - [ ] Início do firmware com leitura de moedeiro/noteiro
+
+- [ ] **Semana 3**
+  - [ ] Exibição no display (créditos, status, mensagens)
+  - [ ] Criação do banco de dados MySQL (estrutura básica)
+  - [ ] Desenvolvimento inicial da API (PHP REST)
+
+- [ ] **Semana 4**
+  - [ ] Comunicação entre ESP32 ↔️ API
+  - [ ] Teste de inserção de crédito e controle de liberação
+  - [ ] Interface de login e acesso básico (painel web)
+
+---
+
+### 📅 Mês 2: Integração PIX + Painéis Web
+
+- [ ] **Semana 5**
+  - [ ] Integração com Gerencianet (geração de QR Code)
+  - [ ] Processamento automático do pagamento PIX
+  - [ ] Liberação de crédito após confirmação
+
+- [ ] **Semana 6**
+  - [ ] Criação do painel **Admin**
+    - Dashboard, mesas, estabelecimentos
+    - Cadastro de novas mesas com configurações iniciais
+  - [ ] Exibição do status das mesas em tempo real
+
+- [ ] **Semana 7**
+  - [ ] Criação do painel **Parceiro**
+    - Minhas mesas, repasses, relatórios e suporte
+  - [ ] Relatórios simples por período e forma de pagamento
+
+- [ ] **Semana 8**
+  - [ ] Implementação da geolocalização via Google Maps
+  - [ ] Mapa com status visual (online/offline/bloqueada)
+  - [ ] Simulação completa do fluxo (crédito, uso, liberação)
+
+---
+
+### 📅 Mês 3: Acertos, Ajustes e Implantação
+
+- [ ] **Semana 9**
+  - [ ] Módulo de acertos financeiros (admin e parceiro)
+  - [ ] Regras de comissão e histórico de repasses
+  - [ ] Geração de comprovantes (PDF)
+
+- [ ] **Semana 10**
+  - [ ] Validação de relatórios e exportação (Excel, PDF)
+  - [ ] Finalização da tela de suporte (chamados)
+  - [ ] Testes de desempenho do painel e dispositivos
+
+- [ ] **Semana 11**
+  - [ ] Ajustes finos no firmware e na API
+  - [ ] Teste com fallback 4G (SIM7600)
+  - [ ] Testes em campo com estabelecimentos reais
+
+- [ ] **Semana 12**
+  - [ ] Documentação final (manual técnico e instalação)
+  - [ ] Implantação inicial
+  - [ ] Monitoramento e feedback dos primeiros parceiros
+
+---
+
+
 
 ## Contato
 Para dúvidas ou sugestões, entre em contato com o desenvolvedor do sistema.
-
----
-
-# Pagamento via PIX - Integração com Gerencianet
-
-## Visão Geral
-
-O sistema SAMS 1.0 permite que o cliente pague para liberar a mesa de sinuca via PIX, sem a necessidade de inserir fichas ou cédulas. Essa funcionalidade é feita através da API da **Gerencianet**, que gera um QR Code dinâmico para pagamento e notifica o sistema quando o valor é recebido.
-
----
-
-## Como Funciona
-
-1. O cliente escolhe a opção “Pagar com PIX” no display da mesa.
-2. O dispositivo (ESP32) envia uma solicitação para o servidor gerar a cobrança.
-3. O servidor cria uma cobrança na **API da Gerencianet**.
-4. A Gerencianet retorna o **QR Code** (imagem base64) e o código "copia e cola".
-5. O QR Code é exibido na tela da mesa.
-6. O cliente faz o pagamento usando o app do banco.
-7. A Gerencianet envia automaticamente uma **confirmação (webhook)** para o servidor.
-8. O servidor valida o pagamento e avisa o ESP32 para liberar a mesa.
-
-## Benefícios
-
-- Pagamento sem contato
-- Rápido e prático para o cliente
-- Confirmação automática e segura
-- Totalmente integrado com o sistema de créditos
-
----
-
-## Observações
-
-- É necessário ter uma conta Gerencianet com PIX habilitado.
-- A autenticação usa **Client ID**, **Client Secret** e um **certificado .p12**.
-- O sistema usa **cobranças dinâmicas com vencimento automático**.
-
----
-
