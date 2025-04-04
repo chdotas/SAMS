@@ -378,22 +378,22 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 ## Painel do Parceiro
 
 ### `telas/parceiro/dashboard.php`
-![dashboard.php](parceiro/dashboard.png)
+![dashboard.php](telas/parceiro/dashboard.png)
 
-### `/parceiro/minhas_mesas.php`
-![minhas_mesas.php](parceiro/minhas_mesas.png)
+### `telas/parceiro/minhas_mesas.php`
+![minhas_mesas.php](telas/parceiro/minhas_mesas.png)
 
-### `/parceiro/relatorios.php`
-![relatorios.php](parceiro/relatorios.png)
+### `telas/parceiro/relatorios.php`
+![relatorios.php](telas/parceiro/relatorios.png)
 
-### `/parceiro/acertos.php`
-![acertos.php](parceiro/acertos.png)
+### `telas/parceiro/acertos.php`
+![acertos.php](telas/parceiro/acertos.png)
 
-### `/parceiro/suporte.php`
-![suporte.php](parceiro/suporte.png)
+### `telas/parceiro/suporte.php`
+![suporte.php](telas/parceiro/suporte.png)
 
-### `/parceiro/perfil.php`
-![perfil.php](parceiro/perfil.png)
+### `telas/parceiro/perfil.php`
+![perfil.php](telas/parceiro/perfil.png)
 
 ---
 
