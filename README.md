@@ -392,9 +392,6 @@ Caso queira, posso agora gerar a estrutura de banco de dados (`SQL`) ou iniciar 
 ### `telas/parceiro/suporte.php`
 ![suporte.php](telas/parceiro/suporte.png)
 
-### `telas/parceiro/perfil.php`
-![perfil.php](telas/parceiro/perfil.png)
-
 ---
 
 ## Painel do Administrador
